@@ -1,0 +1,351 @@
+:root{
+  --mainbox:#0d072e;
+  --headingbox:linear-gradient(to left, rgb(39, 115, 150), rgb(106, 0, 173));
+  --wordbox:linear-gradient(to right, rgb(35, 103, 171), rgb(93, 93, 157));
+  --left-minbox: rgb(35, 103, 171);
+ --right-minbox:rgb(93, 93, 157);
+  --popupbox:linear-gradient(to left, rgba(136, 108, 207, 0.8),rgb(69, 125, 195));
+
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  position: relative;
+  width: 80vw;
+  height: 100vh;
+  background:var(--mainbox) ;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0px;
+  font-size: 25px;
+}
+h1 img {
+  position: absolute;
+  left: -5%;
+  width: 70px;
+  height: 70px;
+}
+h1 {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 25%;
+  height: 10%;
+  display: flex;
+  padding-left: 7%;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  margin: 2%;
+  background: var(--headingbox)
+}
+#time {
+  position: absolute;
+  padding: 3px;
+  top: 15%;
+  left: 10%;
+  width: 7%;
+  height: 5%;
+  text-align: center;
+  color: aliceblue;
+  background:var(--left-minbox);
+  padding: 2px 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+#morediv {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  height: 5%;
+  z-index: 1;
+  padding: 1%;
+  color: white;
+  display: flex;
+  user-select: none;
+  justify-content: space-around;
+  align-items: center;
+  font-family: monospace;
+  background: var(--right-minbox);
+  cursor: pointer;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#arrow {
+  text-align: center;
+  height: 20px;
+  font-weight: 900;
+  transform: rotate(180deg);
+  font-size: 20px;
+}
+#arrow.arrowflip {
+  transform: rotate(360deg);
+}
+#options {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  z-index: 20;
+  background: rgb(93, 93, 157);
+  width: 15%;
+  height: 30%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+.option {
+  width: 100%;
+  height: 30px;
+  border-radius: 0px;
+  display: flex;
+  color: white;
+  text-indent: 5px;
+ justify-content: space-between;
+  align-items: center;
+}
+#options.flagactive {
+  display: flex;
+}
+.option:hover {
+  background: rgb(0, 0, 0, 0.5);
+}
+#minbox {
+  position: absolute;
+  top: 15%;
+  left: 17%;
+  width: 9%;
+  height: 5%;
+  z-index: 1;
+  padding: 4px;
+  color: white;
+  display: flex;
+  user-select: none;
+  justify-content: space-around;
+  align-items: center;
+  font-family: monospace;
+  background: var(--left-minbox);
+  cursor: pointer;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+#arrowmin {
+  width: 20px;
+  text-align: center;
+  height: 20px;
+  padding: 1%;
+  font-weight: 900;
+  transform: rotate(180deg);
+}
+#arrowmin.arrowflip {
+  transform: rotate(360deg);
+}
+#mindiv {
+  position: absolute;
+  top: 20%;
+  left: 17%;
+  z-index: 20;
+  background: var(--right-minbox);
+  width: 7%;
+  height: 20%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+#mindiv.displaynone {
+  display: flex;
+}
+.minp {
+  width: 100%;
+  height: 30px;
+  border-radius: 0px;
+  display: flex;
+  color: white;
+  text-indent: 5px;
+ justify-content: space-between;
+  align-items: center;
+}
+#mindiv.flagactive {
+  display: flex;
+}
+.minp:hover {
+  background: rgb(0, 0, 0, 0.5);
+}
+#words {
+  position: absolute;
+  top: 20%;
+  width: 80%;
+  height: 50%;
+  padding: 1%;
+
+  overflow: auto;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  background: var(--wordbox)
+}
+::-webkit-scrollbar{
+  display: none;
+}
+#words .text {
+  margin: 3px;
+  padding: 1%;
+  background: rgb(32, 44, 92, 0.5);
+  font-family: 32px;
+  font-weight: 600;
+  color: white;
+  float: left;
+}
+#inputdiv {
+  position: absolute;
+  top: 75%;
+  width: 40%;
+  height: 7%;
+  font-size: 25px;
+  outline: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+}
+#inputdiv input {
+  width: 90%;
+  border: none;
+  color: aliceblue;
+  font-weight: bolder;
+  background: transparent;
+  text-align: center;
+  font-size: 40px;
+}
+input:focus {
+  outline: none;
+}
+#popup {
+  position: absolute;
+  z-index: 21;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+  background: var(--popupbox);
+  color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 20px 1px rgb(52, 50, 50);
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#popup p {
+  margin: 1%;}
+#popup button {
+  font-weight: 800;
+  width: 20%;
+  color: rgb(255, 255, 255);
+  height: 12%;
+  margin-top: 1%;
+  border: none;
+  border-radius: 2px;
+  background: #f03333;
+}
+#popup button:hover{
+  background-color: rgb(204, 10, 10);
+}
+#popup img{
+  width: 30%;
+  height: 50%;
+}
+@media(min-width:650px) and (max-width:999px){
+  main{
+  
+font-size: 15px;
+}
+  h1{
+    width: 35%;
+  }
+  h1 img{
+    left: -10%;
+  }
+#time{
+  width: 10%;
+}
+#minbox{
+ left: 20%;
+  width: 15%;
+}#mindiv{
+left: 20%;
+  width: 15%;
+}
+#options{
+width: 20%;
+}
+#inputdiv input{
+  font-size: 20px;
+}}
+
+@media(min-width:1000px) and (max-width:1400px){
+  h1{
+    width: 35%;
+    font-size: 30px;
+  }
+  h1 img{
+    width: 120px;
+    height: 120px;
+  }
+#time{
+  width: 10%;
+}
+#minbox{
+  left: 20%;
+  width: 15%;
+  
+}#mindiv{
+  left: 20%;
+  width: 15%;
+}
+#options{
+  width: 20%;
+  font-size: 20px;
+}
+
+}
+@media(min-width:1401px){
+  main{
+    width: 90vw;
+    font-size: 25px;
+  }
+  h1{
+    width:300px ;
+    height: 60px;
+  }
+  h1 img{
+    width: 130px;
+    height: 130px;
+  
+  }
+  #time{
+    width: 100px;
+  }
+  #popup p{
+    font-size: 30px;
+  }
+  #popup button{
+    font-size: 15%;
+  }
+}
